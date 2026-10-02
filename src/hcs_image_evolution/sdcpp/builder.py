@@ -56,6 +56,8 @@ class SDCPPBuilder:
 
         build_cmd = ["cmake", "--build", str(self.build_dir), "--config", "Release", "--parallel"]
         build_res = subprocess.run(build_cmd, capture_output=True, text=True, check=False)
+        if build_res.returncode != 0:
+            logger.warning("CMake build warning: %s", build_res.stderr)
 
         # Look for sd-cli.exe in build outputs
         for name in ["sd-cli.exe", "sd.exe", "Release/sd-cli.exe", "bin/sd-cli.exe"]:

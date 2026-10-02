@@ -40,6 +40,9 @@ class ResearchPlanner:
             # Check if metrics warrant promotion or curriculum adaptation
             quality = recent_metrics.get("quality", 0.0)
             typography = recent_metrics.get("typography", 0.0)
+            if quality < 0.70:
+                logger.info("Quality score low (%.2f). Scheduling additional training.", quality)
+                return EvolutionPhase.TRAIN, {"additional_steps": 500}
             if typography < 0.65:
                 logger.info("Typography score low (%s). Adapting curriculum for next iteration.", typography)
                 return EvolutionPhase.GENERATION, {"focus": "typography", "ratio_boost": 0.25}
