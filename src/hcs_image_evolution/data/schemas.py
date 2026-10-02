@@ -1,7 +1,7 @@
 """Data schemas conforming strictly to PLAN.md section 18 and 19."""
 
 import datetime
-from typing import Any, Optional
+from typing import Optional
 from pydantic import BaseModel, Field
 
 

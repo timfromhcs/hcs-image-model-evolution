@@ -25,6 +25,6 @@ class CaptionValidator:
         colors = ["red", "blue", "green", "yellow", "black", "white"]
         for color in colors:
             if f"red {color}" in p_lower and f"blue {color}" in v_lower:
-                return True, f"Color contradiction: prompt wanted red, observed blue"
+                return True, "Color contradiction: prompt wanted red, observed blue"
 
         return False, "Consistent"

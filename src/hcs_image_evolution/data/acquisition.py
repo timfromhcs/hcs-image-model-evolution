@@ -1,10 +1,10 @@
 """Hugging Face dataset search and verified permissive dataset acquisition."""
 
-from typing import Any, Optional
+from typing import Optional
 from huggingface_hub import HfApi
 from hcs_image_evolution.data.licensing import LicenseGate
 from hcs_image_evolution.data.schemas import DatasetSourceRecord
-from hcs_image_evolution.utils.logging import log_event, logger
+from hcs_image_evolution.utils.logging import logger
 
 
 class DatasetAcquisition:
