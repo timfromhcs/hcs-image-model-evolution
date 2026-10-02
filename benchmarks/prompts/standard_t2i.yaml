@@ -1,0 +1,10 @@
+prompts:
+  - id: "t2i-001"
+    prompt: "A detailed cinematic shot of an astronaut riding a white horse on Mars, red dust storm in the background"
+    category: "cinematic"
+  - id: "t2i-002"
+    prompt: "Macro photography of a water droplet reflecting a vibrant sunflower at dawn"
+    category: "macro"
+  - id: "t2i-003"
+    prompt: "An elegant art deco lobby with polished brass fixtures and marble floors"
+    category: "architecture"

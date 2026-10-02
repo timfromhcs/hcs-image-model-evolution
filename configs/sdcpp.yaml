@@ -1,0 +1,24 @@
+sdcpp:
+  repository: "https://github.com/leejet/stable-diffusion.cpp"
+  pinned_commit: "master"
+  backend: "vulkan" # "vulkan" or "cpu" or "cuda"
+  build_flags:
+    - "-DSD_VULKAN=ON"
+    - "-DSD_BUILD_EXAMPLES=ON"
+    - "-DCMAKE_BUILD_TYPE=Release"
+
+  quantizations:
+    primary: "q4_k"
+    all:
+      - "f16"
+      - "q8_0"
+      - "q6_k"
+      - "q5_k"
+      - "q4_k"
+
+  runtime:
+    cli_binary: "sd-cli.exe"
+    default_sampling_method: "euler"
+    default_steps: 4
+    default_cfg_scale: 1.0
+    vae_tiling: true

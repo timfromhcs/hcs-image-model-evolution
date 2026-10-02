@@ -1,0 +1,13 @@
+experiment:
+  id: "exp-001"
+  name: "qwen_lora_4step_distill_baseline"
+  parent: null
+  hypothesis: "Baseline 4-step trajectory distillation from Qwen-Image-2.1 teacher using flow matching and LoRA fine-tuning preserves prompt alignment and visual quality."
+  training_run: "RUN-001"
+  status: "initialized"
+  overrides:
+    training:
+      lora:
+        rank: 64
+      schedule:
+        phase: "phase_0_smoke"

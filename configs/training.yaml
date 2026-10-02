@@ -1,0 +1,48 @@
+training:
+  track: "A_production" # "A_production" (LoRA -> merge) or "B_architecture_evolution" (compact student DiT)
+  precision: "bfloat16"
+  gradient_checkpointing: true
+  gradient_accumulation_steps: 4
+  optimizer:
+    name: "AdamW8bit" # fallback: AdamW
+    lr: 1.0e-4
+    weight_decay: 0.01
+    betas: [0.9, 0.999]
+    eps: 1.0e-8
+
+  lora:
+    rank: 64
+    alpha: 64
+    target_modules:
+      - "to_q"
+      - "to_k"
+      - "to_v"
+      - "to_out.0"
+      - "proj_out"
+    dropout: 0.05
+
+  schedule:
+    phases:
+      phase_0_smoke:
+        steps: 200
+        batch_size: 1
+        resolution: 768
+        eval_interval: 50
+      phase_1_prototype:
+        steps: 2000
+        batch_size: 2
+        resolution: 1024
+        eval_interval: 200
+      phase_2_production:
+        steps: 10000
+        batch_size: 2
+        resolution: 1024
+        eval_interval: 500
+
+  checkpointing:
+    save_interval_steps: 200
+    save_on_improvement: true
+    backup_to_drive: true
+    retention:
+      keep_last_n: 5
+      keep_best_n: 3

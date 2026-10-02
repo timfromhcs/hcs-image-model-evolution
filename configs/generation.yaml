@@ -1,0 +1,30 @@
+teacher:
+  model_id: "Qwen/Qwen-Image-2.1"
+  revision: "main"
+  torch_dtype: "bfloat16"
+  default_steps: 40
+  default_guidance_scale: 4.5
+  candidates_per_prompt: 4
+  device_map: "auto"
+  enable_model_cpu_offload: true
+  enable_vae_tiling: true
+
+curriculum:
+  difficulty_distribution:
+    D0_simple_subject: 0.10
+    D1_multiple_objects: 0.15
+    D2_detailed_scene: 0.15
+    D3_spatial_relationships: 0.10
+    D4_counting: 0.10
+    D5_typography: 0.15
+    D6_complex_composition: 0.10
+    D7_multiref_editing: 0.05
+    D8_realworld_editing: 0.05
+    D9_adversarial_edgecases: 0.05
+
+  aspect_ratios:
+    - "1:1"
+    - "16:9"
+    - "9:16"
+    - "4:3"
+    - "3:4"

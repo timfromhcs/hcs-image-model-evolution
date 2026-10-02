@@ -1,0 +1,24 @@
+distillation:
+  target_steps: 4
+  candidate_steps: [4, 5, 6, 8]
+  guidance_scale: 1.0 # 1.0 for distilled low-NFE models
+
+  schedule:
+    type: "flow_matching"
+    sigma_min: 0.002
+    sigma_max: 80.0
+    rho: 7.0
+    timesteps_4step: [999, 749, 499, 249]
+
+  loss_weights:
+    flow_matching: 1.0
+    trajectory_matching: 0.5
+    dmd_distribution: 0.25
+    feature_distillation: 0.2
+    perceptual_lpips: 0.1
+    editing_consistency: 0.5
+
+  teacher_caching:
+    enabled: true
+    cache_dir: "cache/teacher_targets"
+    max_cache_gb: 50

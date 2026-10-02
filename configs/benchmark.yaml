@@ -1,0 +1,24 @@
+benchmark:
+  suites:
+    - "t2i"
+    - "typography"
+    - "counting"
+    - "composition"
+    - "realism"
+    - "editing"
+    - "multireference"
+    - "highres"
+    - "adversarial"
+
+  baselines:
+    teacher: "Qwen/Qwen-Image-2.1"
+    compare_with_champion: true
+
+  gates:
+    min_quality_ratio_vs_teacher: 0.85
+    min_prompt_alignment: 0.70
+    min_editing_fidelity: 0.70
+    max_artifact_rate: 0.15
+    max_latency_seconds_sdcpp_q4: 15.0 # on AMD 680M / Vulkan 1024x1024 4-step
+
+  output_dir: "benchmarks/reports"

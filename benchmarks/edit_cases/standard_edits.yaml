@@ -1,0 +1,7 @@
+edits:
+  - id: "edit-001"
+    instruction: "Change the red car to emerald green while keeping all street reflections unchanged"
+    source_prompt: "A red sports car parked on a rainy city street"
+  - id: "edit-002"
+    instruction: "Add a full moon into the clear night sky above the mountain ridge"
+    source_prompt: "A quiet mountain valley under a dark starry sky"

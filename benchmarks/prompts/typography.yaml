@@ -1,0 +1,7 @@
+prompts:
+  - id: "typo-001"
+    prompt: 'A vintage bookstore storefront with gold leaf lettering on the glass that reads "THE TIMELESS TOME"'
+    expected_text: "THE TIMELESS TOME"
+  - id: "typo-002"
+    prompt: 'A bold modern packaging design with clear typography stating "PURE EVOLUTION"'
+    expected_text: "PURE EVOLUTION"

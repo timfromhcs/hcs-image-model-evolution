@@ -1,0 +1,30 @@
+project:
+  name: "HCS Image Model Evolution Lab"
+  short_name: "hcs-image-evolution"
+  version: "0.1.0"
+  description: "Autonomous closed-loop research and production pipeline for few-step distilled diffusion models"
+  author: "timfromhcs"
+  email: "timfromhcs@gmail.com"
+  license: "Apache-2.0"
+
+paths:
+  state_dir: "state"
+  cache_dir: "cache"
+  configs_dir: "configs"
+  benchmarks_dir: "benchmarks"
+  manifests_dir: "manifests"
+  dist_dir: "dist"
+  drive_mount: "/content/drive/MyDrive/HCS_Image_Evolution"
+  local_staging: "state/staging"
+
+reproducibility:
+  seed: 42
+  deterministic: false
+  allow_tf32: true
+
+system:
+  max_retries: 3
+  retry_delay_seconds: 5
+  checkpoint_retention:
+    last_n: 5
+    best_n: 3

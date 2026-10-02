@@ -1,0 +1,72 @@
+# Python & environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing & Linting
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# State & Caches (Plan rules: never commit runtime state or huge datasets)
+state/*
+!state/.gitkeep
+cache/
+data/
+downloads/
+*.ckpt
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+*.tar
+*.parquet
+runs/
+*.log
+local_cache/
+storage_cache/
+
+# Secrets & Credentials
+.env
+.env.*
+*.secret
+*.token
+credentials.json
+client_secret*.json
+token.json
+
+# OS specific
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
