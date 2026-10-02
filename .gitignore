@@ -40,9 +40,9 @@ htmlcov/
 # State & Caches (Plan rules: never commit runtime state or huge datasets)
 state/*
 !state/.gitkeep
-cache/
-data/
-downloads/
+/cache/
+/data/
+/downloads/
 *.ckpt
 *.safetensors
 *.bin
